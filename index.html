@@ -1,0 +1,1100 @@
+    <style>
+    /* Burger menu language switcher modern, high-contrast, accessible styles */
+    .mobile-language-switcher {
+      margin: 1.5em 0 1.5em 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .mobile-lang-switcher-inner {
+      display: flex;
+      background: #101010;
+      border-radius: 999px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+      overflow: hidden;
+      border: 2.5px solid #ffe066;
+      min-width: 180px;
+      max-width: 320px;
+    }
+    .mobile-language-switcher .lang-btn {
+      flex: 1 1 0;
+      background: none;
+      color: #ffe066;
+      border: none;
+      border-radius: 0;
+      padding: 0.85em 0.5em;
+      font-size: 1.15em;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+      outline: none;
+      box-shadow: none;
+      position: relative;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      z-index: 0;
+      border-right: 1.5px solid #ffe066;
+    }
+    .mobile-language-switcher .lang-btn:last-child {
+      border-right: none;
+    }
+    .mobile-language-switcher .lang-btn.active,
+    .mobile-language-switcher .lang-btn:focus-visible {
+      background: #ffe066;
+      color: #181818;
+      z-index: 2;
+      box-shadow: 0 0 0 3px #ffe06655;
+    }
+    .mobile-language-switcher .lang-btn:not(.active):hover {
+      background: #232323;
+      color: #ffe066;
+    }
+    .mobile-language-switcher .lang-btn:focus {
+      outline: 2.5px solid #ffe066;
+      outline-offset: 2px;
+    }
+    @media (max-width: 600px) {
+      .mobile-lang-switcher-inner {
+        width: 100%;
+        min-width: 0;
+      }
+      .mobile-language-switcher .lang-btn {
+        font-size: 1em;
+        padding: 0.7em 0.2em;
+      }
+    }
+    .size-chart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+      font-size: 1em;
+    }
+    .size-chart-table th, .size-chart-table td {
+      border: 1px solid #ddd;
+      padding: 0.5em 0.8em;
+      text-align: center;
+    }
+    .size-chart-table th {
+      background: #f5f5f5;
+      color: #c2185b;
+      font-weight: 600;
+    }
+    .size-chart-table tr:nth-child(even) {
+      background: #fafafa;
+    }
+    @media (max-width: 600px) {
+      .size-chart-table th, .size-chart-table td {
+        font-size: 0.95em;
+        padding: 0.4em 0.3em;
+      }
+    }
+    /* Holding screen overlay and popup styles */
+    .holding-blur {
+      filter: blur(7px) !important;
+      pointer-events: none !important;
+      user-select: none !important;
+    }
+    .holding-screen-popup {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.18);
+      pointer-events: auto;
+    }
+    .holding-popup-content {
+      background: rgba(20,20,20,0.93);
+      color: #fff;
+      border-radius: 32px;
+      box-shadow: 0 0 32px rgba(0,0,0,0.25);
+      padding: 2.2em 2.5em 2em 2.5em;
+      max-width: 600px;
+      width: 90vw;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .holding-popup-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5em;
+      font-weight: 700;
+      margin: 0 0 0.7em 0;
+      color: #fff;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+    .holding-popup-content p {
+      font-size: 1.25em;
+      margin: 0 0 1.2em 0;
+      color: #fff;
+      font-family: 'Inter', Arial, sans-serif;
+    }
+    .holding-popup-content a {
+      color: #ffe066;
+      text-decoration: underline;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .holding-popup-content a:hover {
+      color: #fffbe0;
+    }
+    .holding-lang-switcher {
+      margin-top: 1.2em;
+      display: flex;
+      justify-content: center;
+    }
+    .holding-lang-switcher-inner {
+      display: flex;
+      background: #101010;
+      border-radius: 999px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+      overflow: hidden;
+      border: 2.5px solid #e0e0e0;
+      min-width: 180px;
+      max-width: 320px;
+    }
+    .holding-lang-switcher .lang-btn {
+      flex: 1 1 0;
+      background: none;
+      color: #e0e0e0;
+      border: none;
+      border-radius: 0;
+      padding: 0.85em 0.5em;
+      font-size: 1.15em;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+      outline: none;
+      box-shadow: none;
+      position: relative;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      z-index: 0;
+      border-right: 1.5px solid #232323;
+    }
+    .holding-lang-switcher .lang-btn:last-child {
+      border-right: none;
+    }
+    .holding-lang-switcher .lang-btn.active,
+    .holding-lang-switcher .lang-btn:focus-visible {
+      background: #fff;
+      color: #181818;
+      z-index: 2;
+      box-shadow: 0 0 0 3px #e0e0e0;
+    }
+    .holding-lang-switcher .lang-btn:not(.active):hover {
+      background: #232323;
+      color: #fff;
+    }
+    .holding-lang-switcher .lang-btn:focus {
+      outline: 2.5px solid #e0e0e0;
+      outline-offset: 2px;
+    }
+    @media (max-width: 600px) {
+      .holding-lang-switcher-inner {
+        width: 100%;
+      }
+      .holding-lang-switcher .lang-btn {
+        flex: 1 1 0;
+        padding: 0.5em 0.5em;
+        font-size: 1em;
+      }
+    }
+    @media (max-width: 600px) {
+      .holding-popup-content {
+        padding: 1.2em 0.5em 1em 0.5em;
+        font-size: 1em;
+      }
+      .holding-popup-content h1 {
+        font-size: 1.5em;
+      }
+    }
+    </style>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shwyt hdoom - شوية هدوم</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    /* Always show hamburger next to logo on desktop */
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .hamburger {
+      display: inline-flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-left: 0.5em;
+      z-index: 1100;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      background: #222;
+      margin: 3px 0;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    @media (min-width: 900px) {
+      .header-actions {
+        gap: 1em;
+      }
+    }
+    @media (max-width: 899px) {
+      .header .container {
+        flex-direction: row;
+      }
+    }
+    /* Burger menu and dropdown styles */
+    .nav-mobile {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.98);
+      z-index: 1000;
+      transform: translateX(-100%);
+      transition: transform 0.3s;
+      width: 100vw;
+      max-width: 100vw;
+      overflow-y: auto;
+      display: block;
+    }
+    .nav-mobile.open {
+      transform: translateX(0);
+    }
+    .mobile-nav-content {
+      padding: 2em 1.5em 1.5em 1.5em;
+      max-width: 400px;
+      margin: 0 auto;
+      background: #fff;
+      min-height: 100vh;
+      box-shadow: 0 0 16px rgba(0,0,0,0.08);
+    }
+    .mobile-close-btn {
+      background: none;
+      border: none;
+      font-size: 2em;
+      position: absolute;
+      top: 1em;
+      right: 1.5em;
+      cursor: pointer;
+      color: #333;
+    }
+    .mobile-nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 2em 0 0 0;
+    }
+    .mobile-nav-link {
+      display: block;
+      padding: 0.75em 0;
+      color: #222;
+      text-decoration: none;
+      font-size: 1.1em;
+      font-weight: 500;
+      border-bottom: 1px solid #eee;
+      transition: color 0.2s;
+    }
+    .mobile-nav-link:hover {
+      color: #c2185b;
+    }
+    .has-dropdown {
+      position: relative;
+    }
+    .dropdown-toggle {
+      background: none;
+      border: none;
+      font-size: 1em;
+      margin-left: 0.5em;
+      cursor: pointer;
+      color: #888;
+      vertical-align: middle;
+      transition: color 0.2s;
+    }
+    .dropdown-toggle:focus {
+      outline: 2px solid #c2185b;
+    }
+    .dropdown-menu {
+      display: none;
+      list-style: none;
+      padding-left: 1.5em;
+      margin: 0.2em 0 0 0;
+      background: #fafafa;
+      border-radius: 0.3em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .has-dropdown.dropdown-open > .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu li {
+      border-bottom: 1px solid #eee;
+    }
+    .dropdown-menu li:last-child {
+      border-bottom: none;
+    }
+    @media (min-width: 900px) {
+      .nav-mobile {
+        display: none;
+      }
+      .nav-mobile.open {
+        display: block;
+        position: fixed;
+        left: auto;
+        right: 0;
+        width: 400px;
+        max-width: 100vw;
+        box-shadow: -2px 0 16px rgba(0,0,0,0.08);
+      }
+      .mobile-nav-content {
+        min-height: 100vh;
+      }
+    }
+    @media (max-width: 899px) {
+      .nav-mobile {
+        width: 100vw;
+        max-width: 100vw;
+      }
+      .mobile-nav-content {
+        max-width: 100vw;
+      }
+    }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!--     
+    <script>
+    // Holding screen activation script
+    document.addEventListener('DOMContentLoaded', function() {
+      // Blur everything except holding screen
+      document.body.querySelectorAll(':scope > *:not(#holdingScreen)').forEach(function(el) {
+        if (el.tagName !== 'SCRIPT' && el.tagName !== 'STYLE') {
+          el.classList.add('holding-blur');
+        }
+      });
+    });
+    </script>
+    <div id="holdingScreen" class="holding-screen-popup">
+      <div class="holding-popup-content">
+        <h1 data-en="shwythdoom web is on hold now" data-ar="موقع شوية هدوم متوقف الآن">shwythdoom web is on hold now</h1>
+        <p>
+          <span data-en="want to order ?? send us a message at" data-ar="تريد الطلب؟ أرسل لنا رسالة على">want to order ?? send us a message at</span>
+          <a href="https://instagram.com/alqady_clothes" target="_blank" rel="noopener" data-en="our Instagram page" data-ar="صفحتنا على إنستجرام">our Instagram page</a>
+        </p>
+        <div class="holding-lang-switcher">
+          <div class="holding-lang-switcher-inner">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ar">AR</button>
+          </div>
+        </div>
+      </div>
+      <script>
+      // Language switcher for holding screen
+      (function() {
+        var holdingScreen = document.getElementById('holdingScreen');
+        if (!holdingScreen) return;
+        var langBtns = holdingScreen.querySelectorAll('.lang-btn');
+        function setLang(lang) {
+          holdingScreen.querySelectorAll('[data-en]').forEach(function(el) {
+            el.textContent = el.getAttribute('data-' + lang) || el.textContent;
+          });
+          holdingScreen.querySelectorAll('a[data-en]').forEach(function(el) {
+            el.textContent = el.getAttribute('data-' + lang) || el.textContent;
+          });
+          langBtns.forEach(function(btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+          });
+          if (lang === 'ar') {
+            holdingScreen.querySelector('.holding-popup-content').style.direction = 'rtl';
+          } else {
+            holdingScreen.querySelector('.holding-popup-content').style.direction = 'ltr';
+          }
+        }
+        langBtns.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            setLang(btn.getAttribute('data-lang'));
+          });
+        });
+      })();
+      </script>
+    </div>
+    -->
+    <header class="header">
+        <div class="container">
+            <div style="display: flex; align-items: center; gap: 1em;">
+                <button class="hamburger" id="hamburgerBtn" aria-label="Open mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <a href="index.html" class="logo">
+                    <img src="images/logo-removebg-preview.png" alt="Logo" style="height:40px;width:auto;object-fit:contain;display:inline-block;vertical-align:middle;">
+                    <h1 style="font-size:1.5rem;margin:0;display:inline-block;vertical-align:middle;">shwyt hdoom - شوية هدوم</h1>
+                </a>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchBtn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size:20px;"></i>
+                </button>
+                <button class="icon-btn" id="cartBtn" aria-label="Shopping Cart">
+                    <i class="fa-solid fa-cart-shopping" style="font-size:20px;"></i>
+                    <span class="count" id="cartCount">0</span>
+                </button>
+                <div class="language-switcher">
+                <!-- Language switcher removed from desktop header; now only in burger menu -->
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-mobile" id="mobileNav">
+        <div class="mobile-nav-content">
+            <div class="mobile-language-switcher" role="group" aria-label="Language Switcher">
+                <div class="mobile-lang-switcher-inner">
+                  <button class="lang-btn active" data-lang="en" aria-pressed="true" tabindex="0">EN</button>
+                  <button class="lang-btn" data-lang="ar" aria-pressed="false" tabindex="0">AR</button>
+                </div>
+            </div>
+            <button class="mobile-close-btn" aria-label="Close mobile menu">&times;</button>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" class="mobile-nav-link" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="index.html" class="mobile-nav-link" data-en="New arrivals" data-ar="وصل حديثًا">New arrivals</a></li>
+                <li class="has-dropdown">
+                    <a href="cotton-pjs.html" class="mobile-nav-link" data-en="Cotton pjs" data-ar="بيجامات قطن">Cotton pjs</a>
+                    <button class="dropdown-toggle" aria-label="Expand Cotton pjs submenu">&#9662;</button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="mobile-nav-link" data-en="Primark mirror pjs" data-ar="بيجامات بريمارك">Primark mirror pjs</a></li>
+                        <li><a href="#" class="mobile-nav-link" data-en="Local brands pjs" data-ar="بيجامات محلية">Local brands pjs</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="classic-pjs.html" class="mobile-nav-link" data-en="Classic pjs" data-ar="بيجامات كلاسيك">Classic pjs</a>
+                    <button class="dropdown-toggle" aria-label="Expand Classic pjs submenu">&#9662;</button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="mobile-nav-link" data-en="Long sleeve pj sets" data-ar="طقم كم طويل">Long sleeve pj sets</a></li>
+                        <li><a href="#" class="mobile-nav-link" data-en="Half sleeve pj sets" data-ar="طقم كم نص">Half sleeve pj sets</a></li>
+                        <li><a href="#" class="mobile-nav-link" data-en="Shorts pj sets" data-ar="طقم شورت">Shorts pj sets</a></li>
+                    </ul>
+                </li>
+                <li><a href="satin-pjs.html" class="mobile-nav-link" data-en="Satin pj sets" data-ar="بيجامات ساتان">Satin pj sets</a></li>
+                <li><a href="night-shirts.html" class="mobile-nav-link" data-en="Night shirts" data-ar="قمصان نوم">Night shirts</a></li>
+                <li><a href="orginals.html" class="mobile-nav-link" data-en="Originals" data-ar="أصلي">Originals</a></li>
+                <li><a href="#about" class="mobile-nav-link" data-en="About Us" data-ar="عنا">About Us</a></li>
+                <li><a href="#contact" class="mobile-nav-link" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero hero-slider-section">
+            <div class="hero-slider-container">
+                <button class="hero-arrow hero-arrow-left" aria-label="Previous banner">&#8592;</button>
+                <div class="hero-slider" id="heroSlider">
+                    <!-- Slides will be injected by JS -->
+                </div>
+                <button class="hero-arrow hero-arrow-right" aria-label="Next banner">&#8594;</button>
+            </div>
+        </section>
+
+    <!-- Category Icon Buttons Row -->
+    <section class="category-icons-row animated-category-row">
+    <div class="category-icons-flex category-icons-scroll">
+        <div class="category-icon-col">
+            <a href="cotton-pjs.html" class="category-icon-btn" title="Cotton pjs" aria-label="Cotton pjs">
+                <i class="fa-solid fa-shirt"></i>
+            </a>
+            <span class="category-icon-label">Cotton PJs</span>
+        </div>
+        <div class="category-icon-col">
+            <a href="classic-pjs.html" class="category-icon-btn" title="Classic pjs" aria-label="Classic pjs">
+                <i class="fa-solid fa-user-tie"></i>
+            </a>
+            <span class="category-icon-label">Classic PJs</span>
+        </div>
+        <div class="category-icon-col">
+            <a href="satin-pjs.html" class="category-icon-btn" title="Satin pjs" aria-label="Satin pjs">
+                <i class="fa-solid fa-person-dress"></i>
+            </a>
+            <span class="category-icon-label">Satin PJs</span>
+        </div>
+        <div class="category-icon-col">
+            <a href="night-shirts.html" class="category-icon-btn" title="Night shirts" aria-label="Night shirts">
+                <i class="fa-regular fa-clock"></i>
+            </a>
+            <span class="category-icon-label">Night Shirts</span>
+        </div>
+        <div class="category-icon-col">
+            <a href="orginals.html" class="category-icon-btn" title="Orginals" aria-label="Orginals">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+            <span class="category-icon-label">Orginals</span>
+        </div>
+    </div>
+    </section>
+<script>
+// Animate category icons row on scroll into view
+document.addEventListener('DOMContentLoaded', function() {
+  var catRow = document.querySelector('.animated-category-row');
+  if (!catRow) return;
+  function showCatRow() {
+    var rect = catRow.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 80) {
+      catRow.classList.add('visible');
+      window.removeEventListener('scroll', showCatRow);
+    }
+  }
+  showCatRow();
+  window.addEventListener('scroll', showCatRow);
+});
+</script>
+
+        <!-- Best Selling Products Section -->
+        <section id="best-selling" class="best-selling-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-en="Best Selling Products" data-ar="الأكثر مبيعًا">Best Selling Products</h2>
+                </div>
+                <div class="products-grid best-selling-grid" id="bestSellingGrid">
+                    <!-- Best selling products will be rendered here by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories section removed as requested -->
+
+        <!-- Company Statistics Section (moved before About section) -->
+        <section id="company-stats" class="company-stats-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-en="Our Achievements" data-ar="إنجازاتنا">Our Achievements</h2>
+                    <p class="section-subtitle" data-en="Proud numbers that reflect our journey and trust." data-ar="أرقام نفخر بها تعكس رحلتنا وثقة عملائنا.">Proud numbers that reflect our journey and trust.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="10000" data-suffix="+">0</div>
+                        <div class="stat-label" data-en="Happy Customers" data-ar="عملاء سعداء">Happy Customers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="500" data-suffix="+">0</div>
+                        <div class="stat-label" data-en="Products Sold" data-ar="منتجات مباعة">Products Sold</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label" data-en="Years of Excellence" data-ar="سنوات من التميز">Years of Excellence</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="100" data-suffix="%">0</div>
+                        <div class="stat-label" data-en="Satisfaction Rate" data-ar="معدل الرضا">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-en="About shwyt hdoom" data-ar="عنا">About shwyt hdoom - شوية هدوم</h2>
+                    <p class="section-subtitle" data-en="Our story, our passion, our commitment to style for every woman." data-ar="قصتنا، شغفنا، التزامنا بالأناقة لكل امرأة.">Our story, our passion, our commitment to style for every woman.</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Team working in a fashion studio at shwyt hdoom" loading="lazy">
+                    </div>
+                    <div class="about-text">
+                        <h3 data-en="Crafting Elegance for Every Woman" data-ar="صناعة الأناقة لكل امرأة">Crafting Elegance for Every Woman</h3>
+                        <p data-en="At shwyt hdoom, we believe that fashion is more than just clothing—it's a form of self-expression for every woman. Founded in 2020, our mission is to provide high-quality, stylish, and comfortable apparel, empowering you to look and feel your best." data-ar="في شوية هدوم، نؤمن بأن الموضة أكثر من مجرد ملابس—إنها شكل من أشكال التعبير عن الذات لكل امرأة. تأسست عام 2020، ومهمتنا توفير ملابس عالية الجودة وأنيقة ومريحة لتمكينك من الظهور والشعور بأفضل حالاتك.">At shwyt hdoom, we believe that fashion is more than just clothing—it's a form of self-expression for every woman. Founded in 2020, our mission is to provide high-quality, stylish, and comfortable apparel, empowering you to look and feel your best.</p>
+                        <p data-en="We meticulously select fabrics, design with precision, and ensure every piece reflects our commitment to craftsmanship and timeless elegance. Our collections are inspired by global trends and classic aesthetics, ensuring every woman finds something unique for every occasion." data-ar="نحن نختار الأقمشة بدقة، ونصمم بدقة، ونتأكد من أن كل قطعة تعكس التزامنا بالحرفية والأناقة الخالدة. مجموعاتنا مستوحاة من الاتجاهات العالمية والجماليات الكلاسيكية، مما يضمن لكل امرأة العثور على شيء فريد لكل مناسبة.">We meticulously select fabrics, design with precision, and ensure every piece reflects our commitment to craftsmanship and timeless elegance. Our collections are inspired by global trends and classic aesthetics, ensuring every woman finds something unique for every occasion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-en="Get in Touch" data-ar="اتصل بنا">Get in Touch</h2>
+                    <p class="section-subtitle" data-en="We'd love to hear from you!" data-ar="نحن نحب أن نسمع منك!">We'd love to hear from you!</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h4 data-en="Contact Details" data-ar="تفاصيل الاتصال">Contact Details</h4>
+                        <div class="info-item">
+                        <i class="fa-solid fa-location-dot info-icon"></i>
+                            <span>alex,egypt</span>
+                        </div>
+                        <div class="info-item">
+                        <i class="fa-solid fa-phone info-icon"></i>
+                            <span>+201 080 691 217</span>
+                        </div>
+                        <div class="info-item">
+                        <i class="fa-solid fa-envelope info-icon"></i>
+                            <span>mahmoudmoatazalqady@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                        <i class="fa-regular fa-clock info-icon"></i>
+                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h4 data-en="Talk to Us" data-ar="تحدث معنا">Talk to Us</h4>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name" data-en="Your Name" data-ar="اسمك">Name</label>
+                                <input type="text" id="name" class="form-input" data-en-placeholder="Your Name" data-ar-placeholder="اسمك" placeholder="Your Name" required aria-required="true" aria-label="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-en="Your Email" data-ar="بريدك الإلكتروني">Email</label>
+                                <input type="email" id="email" class="form-input" data-en-placeholder="Your Email" data-ar-placeholder="بريدك الإلكتروني" placeholder="Your Email" required aria-required="true" aria-label="Your Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" data-en="Subject" data-ar="الموضوع">Subject</label>
+                                <input type="text" id="subject" class="form-input" data-en-placeholder="Subject of your message" data-ar-placeholder="موضوع رسالتك" placeholder="Subject of your message" aria-label="Subject">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-en="Your Message" data-ar="رسالتك">Message</label>
+                                <textarea id="message" class="form-input" rows="5" data-en-placeholder="Your message" data-ar-placeholder="رسالتك هنا..." placeholder="Your message" required aria-required="true" aria-label="Your Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-en="Send Message" data-ar="أرسل الرسالة" aria-label="Send Message">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>shwyt hdoom - شوية هدوم</h3>
+                    <p data-en="Your destination for affordable fashion and timeless style. We believe in quality, elegance, and empowering every woman." data-ar="وجهتك للأزياء العصرية. نؤمن بالجودة والأناقة وتمكين كل امرأة.">Your destination for affordable fashion and timeless style. We believe in quality, elegance, and empowering every woman.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook social-icon"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter social-icon"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube social-icon"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                    <ul>
+                        <li><a href="#about" data-en="About Us" data-ar="عنا">About Us</a></li>
+                        <!-- <li><a href="women.html" data-en="Women" data-ar="نساء">Women (Ages 16-50)</a></li> -->
+                        <li><a href="#" data-en="FAQs" data-ar="الأسئلة الشائعة">FAQs</a></li>
+                        <li><a href="#" data-en="Shipping & Returns" data-ar="الشحن والإرجاع">Shipping & Returns</a></li>
+                        <li><a href="#" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Customer Service" data-ar="خدمة العملاء">Customer Service</h4>
+                    <ul>
+                        <li><a href="#contact" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a></li>
+                        <li><a href="#" data-en="Order Tracking" data-ar="تتبع الطلب">Order Tracking</a></li>
+                        <li><a href="#" data-en="Size Guide" data-ar="دليل المقاسات">Size Guide</a></li>
+                        <li><a href="#" data-en="Gift Cards" data-ar="بطاقات الهدايا">Gift Cards</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="&copy; 2025 shwyt hdoom - شوية هدوم. All rights reserved." data-ar="&copy; 2025 شوية هدوم. جميع الحقوق محفوظة.">&copy; 2025 shwyt hdoom - شوية هدوم. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Search Modal -->
+    <div id="searchModal" class="modal">
+        <div class="modal-content search-modal-content">
+            <div class="modal-header">
+                <h3 data-en="Search Products" data-ar="البحث في المنتجات">Search Products</h3>
+                <button class="close-btn" aria-label="Close search">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="search-input-container">
+                    <input type="text" id="searchInput" class="form-input search-input" data-en-placeholder="Search for products..." data-ar-placeholder="ابحث عن منتجات..." placeholder="Search for products...">
+                    <button class="btn btn-primary" id="clearSearchBtn" data-en="Clear" data-ar="مسح" aria-label="Clear Search">Clear</button>
+                </div>
+                <div class="search-results" id="searchResults">
+                    <div class="products-grid" id="searchProductsGrid"></div>
+                    <div class="no-results" id="noResults" style="display: none;">
+                        <p data-en="No products found. Try different keywords." data-ar="لم يتم العثور على منتجات. جرب كلمات مختلفة.">No products found. Try different keywords.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content product-modal-content">
+            <div class="modal-header">
+                <h3 id="productModalTitle">Product Name</h3>
+                <button class="close-btn" aria-label="Close product details">&times;</button>
+            </div>
+            <div class="modal-body product-modal-body">
+                <div class="product-images-section">
+                    <div class="main-image-container">
+                        <img id="productModalMainImage" src="" alt="Product Image" class="product-modal-image">
+                        <div class="magnifier-lens" id="magnifierLens"></div>
+                    </div>
+                    <div class="thumbnail-gallery" id="productModalThumbnails"></div>
+                </div>
+                <div class="product-details-section">
+                    <div class="product-info">
+                        <p class="product-modal-price" id="productModalPrice">$0.00</p>
+                        <div class="product-rating">
+                            <div class="stars" id="productModalStars"></div>
+                            <span class="rating-text" id="productModalRatingText">(0 Reviews)</span>
+                        </div>
+                        <p class="product-modal-description" id="productModalDescription">Product description</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group" id="sizeOptionGroup">
+                                <label class="option-label" data-en="Size:" data-ar="المقاس:">Size:</label>
+                                <div class="size-options" id="productModalSizes">
+                                    <!-- Size buttons will be injected by JS. Each button should have a span for stock, e.g.:
+                                    <button class="size-btn">M <span class="size-stock">(5 in stock)</span></button>
+                                    -->
+                                </div>
+                                <button id="viewSizeChartBtn" class="btn btn-link" type="button" style="margin-top:0.5em;font-size:0.95em;padding:0;color:#c2185b;text-decoration:underline;background:none;border:none;cursor:pointer;">
+                                    <i class="fa-solid fa-ruler-combined" style="margin-right:0.4em;"></i>
+                                    <span data-en="View Size Chart" data-ar="جدول المقاسات">View Size Chart</span>
+                                </button>
+                            </div>
+                            <div class="option-group" id="colorOptionGroup">
+                                <label class="option-label" data-en="Color:" data-ar="اللون:">Color:</label>
+                                <div class="color-options" id="productModalColors"></div>
+                            </div>
+                            <div class="option-group" id="materialOptionGroup">
+                                <label class="option-label" data-en="Material:" data-ar="الخامة:">Material:</label>
+                                <div class="material-options" id="productModalMaterials"></div>
+                            </div>
+                        </div>
+    <!-- Size Chart Modal -->
+    <div id="sizeChartModal" class="modal">
+        <div class="modal-content size-chart-modal-content">
+            <div class="modal-header">
+                <h3 id="sizeChartModalTitle" data-en="Size Chart" data-ar="جدول المقاسات">Size Chart</h3>
+                <button class="close-btn" aria-label="Close size chart" onclick="closeModal('sizeChartModal')">&times;</button>
+            </div>
+            <div class="modal-body" id="sizeChartModalBody">
+                <!-- Size chart table will be injected by JS -->
+            </div>
+        </div>
+    </div>
+
+                        <div class="stock-info">
+                            <span class="stock-status" id="productModalStockStatus">In Stock</span>
+                        </div>
+
+                        <div class="product-actions">
+                            <button class="btn btn-primary" id="addToCartModalBtn" data-en="Add to Cart" data-ar="أضف إلى السلة" aria-label="Add to Cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <div class="modal-header">
+                <h3 data-en="Shopping Cart" data-ar="سلة التسوق">Shopping Cart</h3>
+                <button class="close-btn" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items" id="cartItems"></div>
+                <div class="cart-summary">
+                    <div class="summary-line">
+                        <span data-en="Subtotal:" data-ar="المجموع الفرعي:">Subtotal:</span>
+                        <span id="cartSubtotal">$0.00</span>
+                    </div>
+                    <div class="summary-line">
+                        <span data-en="Shipping:" data-ar="الشحن:">Shipping:</span>
+                        <span id="cartShipping">$0.00</span>
+                    </div>
+                    <div class="summary-line">
+                        <span data-en="Tax:" data-ar="الضريبة:">Tax:</span>
+                        <span id="cartTax">$0.00</span>
+                    </div>
+                    <div class="summary-line total">
+                        <span data-en="Total:" data-ar="المجموع:">Total:</span>
+                        <span id="cartTotal">$0.00</span>
+                    </div>
+                    <button class="btn btn-primary checkout-btn" id="checkoutBtn" data-en="Proceed to Checkout" data-ar="المتابعة للدفع" aria-label="Proceed to Checkout">Proceed to Checkout</button>
+                </div>
+                <div class="empty-cart" id="emptyCart" style="display: none;">
+                    <p data-en="Your cart is empty" data-ar="سلة التسوق فارغة">Your cart is empty</p>
+                    <button class="btn btn-secondary" onclick="closeModal('cartModal')" data-en="Continue Shopping" data-ar="متابعة التسوق">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content checkout-modal-content">
+            <div class="modal-header">
+                <h3 data-en="Checkout" data-ar="الدفع">Checkout</h3>
+                <button class="close-btn" aria-label="Close checkout">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-content">
+                    <div class="checkout-form">
+                        <h4 data-en="Shipping Information" data-ar="معلومات الشحن">Shipping Information</h4>
+                        <form id="checkoutForm">
+                            <div class="form-group promo-group">
+                                <label for="promoCode" data-en="Promo Code" data-ar="كود الخصم">Promo Code</label>
+                                <div class="promo-input-row">
+                                    <input type="text" id="promoCode" name="promoCode" class="form-input" placeholder="Enter code">
+                                    <button type="button" id="applyPromoBtn" class="btn btn-secondary" data-en="Apply" data-ar="تطبيق">Apply</button>
+                                </div>
+                                <div id="promoFeedback" class="promo-feedback"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" data-en="First Name" data-ar="الاسم الأول">First Name <span class="required-star">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" data-en="Last Name" data-ar="اسم العائلة">Last Name <span class="required-star">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkoutEmail" data-en="Email" data-ar="البريد الإلكتروني">Email <span class="required-star">*</span></label>
+                                <input type="email" id="checkoutEmail" name="checkoutEmail" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" data-en="Phone" data-ar="الهاتف">Phone <span class="required-star">*</span></label>
+                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address" data-en="Address" data-ar="العنوان">Address <span class="required-star">*</span></label>
+                                <input type="text" id="address" name="address" class="form-input" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city" data-en="City" data-ar="المدينة">City <span class="required-star">*</span></label>
+                                    <input type="text" id="city" name="city" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zipCode" data-en="ZIP Code" data-ar="الرمز البريدي">ZIP Code <span class="required-star">*</span></label>
+                                    <input type="text" id="zipCode" name="zipCode" class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="governorate" data-en="Governorate" data-ar="المحافظة">Governorate <span class="required-star">*</span></label>
+                                <select id="governorate" name="governorate" class="form-input" required>
+                                    <option value="" disabled selected data-en="Select Governorate" data-ar="اختر المحافظة">Select Governorate</option>
+                                    <option value="Cairo" data-en="Cairo" data-ar="القاهرة">Cairo</option>
+                                    <option value="Giza" data-en="Giza" data-ar="الجيزة">Giza</option>
+                                    <option value="Alexandria" data-en="Alexandria" data-ar="الإسكندرية">Alexandria</option>
+                                    <option value="Dakahlia" data-en="Dakahlia" data-ar="الدقهلية">Dakahlia</option>
+                                    <option value="Red Sea" data-en="Red Sea" data-ar="البحر الأحمر">Red Sea</option>
+                                    <option value="Beheira" data-en="Beheira" data-ar="البحيرة">Beheira</option>
+                                    <option value="Fayoum" data-en="Fayoum" data-ar="الفيوم">Fayoum</option>
+                                    <option value="Gharbia" data-en="Gharbia" data-ar="الغربية">Gharbia</option>
+                                    <option value="Ismailia" data-en="Ismailia" data-ar="الإسماعيلية">Ismailia</option>
+                                    <option value="Menofia" data-en="Menofia" data-ar="المنوفية">Menofia</option>
+                                    <option value="Minya" data-en="Minya" data-ar="المنيا">Minya</option>
+                                    <option value="Qaliubiya" data-en="Qaliubiya" data-ar="القليوبية">Qaliubiya</option>
+                                    <option value="New Valley" data-en="New Valley" data-ar="الوادي الجديد">New Valley</option>
+                                    <option value="Suez" data-en="Suez" data-ar="السويس">Suez</option>
+                                    <option value="Aswan" data-en="Aswan" data-ar="أسوان">Aswan</option>
+                                    <option value="Assiut" data-en="Assiut" data-ar="أسيوط">Assiut</option>
+                                    <option value="Beni Suef" data-en="Beni Suef" data-ar="بني سويف">Beni Suef</option>
+                                    <option value="Port Said" data-en="Port Said" data-ar="بورسعيد">Port Said</option>
+                                    <option value="Damietta" data-en="Damietta" data-ar="دمياط">Damietta</option>
+                                    <option value="Sharkia" data-en="Sharkia" data-ar="الشرقية">Sharkia</option>
+                                    <option value="South Sinai" data-en="South Sinai" data-ar="جنوب سيناء">South Sinai</option>
+                                    <option value="Kafr El Sheikh" data-en="Kafr El Sheikh" data-ar="كفر الشيخ">Kafr El Sheikh</option>
+                                    <option value="Matrouh" data-en="Matrouh" data-ar="مطروح">Matrouh</option>
+                                    <option value="Luxor" data-en="Luxor" data-ar="الأقصر">Luxor</option>
+                                    <option value="Qena" data-en="Qena" data-ar="قنا">Qena</option>
+                                    <option value="North Sinai" data-en="North Sinai" data-ar="شمال سيناء">North Sinai</option>
+                                    <option value="Sohag" data-en="Sohag" data-ar="سوهاج">Sohag</option>
+                                </select>
+                            </div>
+                            
+                            <h4 data-en="Payment Method" data-ar="طريقة الدفع">Payment Method</h4>
+                            <div class="payment-methods">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="instapay" checked>
+                                    <span class="payment-label">
+                                        <div class="payment-icon instapay-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="1" y="3" width="22" height="18" rx="2" ry="2"></rect>
+                                                <line x1="1" y1="9" x2="23" y2="9"></line>
+                                            </svg>
+                                        </div>
+                                        <span data-en="InstaPay" data-ar="إنستاباي">InstaPay</span>
+                                    </span>
+                                </label>
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="cash">
+                                    <span class="payment-label">
+                                        <div class="payment-icon cash-icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                            </svg>
+                                        </div>
+                                        <span data-en="Cash on Delivery" data-ar="الدفع عند الاستلام">Cash on Delivery</span>
+                                    </span>
+                                </label>
+                            </div>
+                            
+                            <div class="instapay-details" id="instapayDetails">
+                                <div class="instapay-info">
+                                    <h5 data-en="InstaPay Payment" data-ar="دفع إنستاباي">InstaPay Payment</h5>
+                                    <p data-en="You will be redirected to InstaPay to complete your payment securely." data-ar="سيتم توجيهك إلى إنستاباي لإكمال الدفع بأمان.">You will be redirected to InstaPay to complete your payment securely.</p>
+                                    <div class="instapay-features">
+                                        <div class="feature">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            <span data-en="Secure Payment" data-ar="دفع آمن">Secure Payment</span>
+                                        </div>
+                                        <div class="feature">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            <span data-en="Instant Processing" data-ar="معالجة فورية">Instant Processing</span>
+                                        </div>
+                                        <div class="feature">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20,6 9,17 4,12"></polyline>
+                                            </svg>
+                                            <span data-en="No Extra Fees" data-ar="بدون رسوم إضافية">No Extra Fees</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="checkout-summary">
+                        <h4 data-en="Order Summary" data-ar="ملخص الطلب">Order Summary</h4>
+                        <div class="checkout-items" id="checkoutItems"></div>
+                        <div class="checkout-totals">
+                            <div class="summary-line">
+                                <span data-en="Subtotal:" data-ar="المجموع الفرعي:">Subtotal:</span>
+                                <span id="checkoutSubtotal">$0.00</span>
+                            </div>
+                            <div class="summary-line">
+                                <span data-en="Shipping:" data-ar="الشحن:">Shipping:</span>
+                                <span id="checkoutShipping">$0.00</span>
+                            </div>
+                            <div class="summary-line">
+                                <span data-en="Tax:" data-ar="الضريبة:">Tax:</span>
+                                <span id="checkoutTax">$0.00</span>
+                            </div>
+                            <div class="summary-line discount" id="discountLine" style="display:none">
+                                <span data-en="Discount:" data-ar="الخصم:">Discount:</span>
+                                <span id="checkoutDiscount">- $0.00</span>
+                            </div>
+                            <div class="summary-line total">
+                                <span data-en="Total:" data-ar="المجموع:">Total:</span>
+                                <span id="checkoutTotal">$0.00</span>
+                            </div>
+                        </div>
+                        <button type="submit" form="checkoutForm" class="btn btn-primary btn-full" data-en="Place Order" data-ar="تأكيد الطلب" aria-label="Place Order">Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+    
+<script>
+// Burger menu dropdown interactivity with close on outside click and Escape
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  const closeBtn = document.querySelector('.mobile-close-btn');
+  // Open menu
+  if (hamburgerBtn && mobileNav) {
+    hamburgerBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (mobileNav.classList.contains('open')) {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      } else {
+        mobileNav.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  }
+  // Close menu
+  if (closeBtn && mobileNav) {
+    closeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+  // Close on outside click
+  document.addEventListener('click', function(e) {
+    if (mobileNav.classList.contains('open') && !mobileNav.contains(e.target) && e.target !== hamburgerBtn) {
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+  // Close on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+  // Dropdown toggles
+  document.querySelectorAll('.dropdown-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const parent = btn.closest('.has-dropdown');
+      if (parent) {
+        parent.classList.toggle('dropdown-open');
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
