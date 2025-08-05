@@ -1615,7 +1615,7 @@ function processPayment(paymentMethod, formData) {
     if (productModal && productModal.classList.contains('active') && currentProduct) {
         refreshProductModalStock();
     }
-    fetch('http://localhost:3001/api/orders', {
+    fetch('https://shwythdoom-production.up.railway.app/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(orderData)
